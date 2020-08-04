@@ -52,38 +52,8 @@ public class E62qpodb593 {
     
     //clipboard data
     private static byte clipboard = 0;
-    
-    //minified hello world
-    private static final String MIN = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod2qqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod2qqqqqqqzood2qqqzodqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqodbbbbbzdddd2qqqqqqqqqqqqqqqodbbzddd2zod2qqqodbbbbbbzdddddd2zodbbbbbbbbzdddddddd2po";
-    
-    //hello world explained
-//    private static final String TEST_STR = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod" + //H
-//                                                   "2qqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod" + //e
-//                                                   "2qqqqqqqzood" + //ll
-//                                                   "2qqqzod" + //o
-//                                                   "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqod" + //space
-//                                                   "bbbbbzdddd2qqqqqqqqqqqqqqqod" + //W
-//                                                   "bbzddd2zod" + //o
-//                                                   "2qqqod" + //r
-//                                                   "bbbbbbzdddddd2zod" + //l
-//                                                   "bbbbbbbbzdddddddd2po"; //d
-    
-//    private static final String TEST_STR = "dddd" + //go to loop address (4)
-//                                                   "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" + //set loop amount to 25 (26 loops) 
-//                                                   "d" + //pointer right 1
-//                                                   "t" + //set current value to 64
-//                                                   "e" + //start loop
-//                                                   "q" + //add 1 to the address where 64 was set (64 is @, 65 is A)
-//                                                   "o" + //output
-//                                                   "3" +
-//                                                   "qqqqqq" +
-//                                                   "e" +
-//                                                   "q" +
-//                                                   "o" +
-//                                                   "3" +
-//                                                   "";
-    
-    private static final String TEST_STR = "tqqqyoyyyyyypoyqqooqqqoztkkkkotkkkkkkppotyyyyyppo2oqqqokpokkqqotkkkkkkpo";
+    //typpoyyyyyyozyyyyppo2yqqo 25
+    private static final String TEST_STR = "ddddqqqqqqqqqqqqqqqqqqqqqqqqqdteqo3";
     
     
     public static void main(String[] args) {
