@@ -7,6 +7,10 @@ based off another code golf language (reverse-compatible).
 
 anyways email me if you have any questions or want to know why i even bothered to make this.
 
+TO USE THIS WITHOUT JAVASCRIPT OR JAVA there is a c++ version somewhere in the src directory.
+
+goto it and do 'cmake .' then 'make' and you have your executable.
+
 the old way to output hello world was
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod2qqqqqqqqqqqqqqqqqqqqqqqqqqqqqzod2qqqqqqqzood2qqqzodqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqodbbbbbzdddd2qqqqqqqqqqqqqqqodbbzddd2zod2qqqodbbbbbbzdddddd2zodbbbbbbbbzdddddddd2po
 but now it is
