@@ -1,13 +1,9 @@
-
-const util = require("util");
-
 //change the source to whatever you want.
 
-const code = "tqqqyoyyyyyypoyqqooqqqoztkkkkotkkkkkkppotyyyyyppo2oqqqokpokkqqotkkkkkkpo";
+const code = "ddddqqqqqqqqqqqqqqqqqqqqqqqqqdteqo3";
 
 //64k stack size 
-const STACK = [0];
-STACK.length = 0;
+let STACK = [];
 
 const LOOP_START = 'e'; //start the loop
 const COPY       = 'z'; //copy current byte to clipboard
@@ -45,12 +41,14 @@ let looping = false;
 let clipboard = 0;
 
 const instructions = code.match(/./g);
-
 let outputString = "";
 
+//js is dumb
+STACK = Array.apply(null, Array(65536)).map(Number.prototype.valueOf, 0);
+
 for(let i1 = 0; i1 < instructions.length; i1++) {
-	const c = instructions[i1];
 	loopTimes = STACK[LOOP_TIMES_ADDR];
+	const c = instructions[i1];
 	switch(c) {
 		case COPY:
 			clipboard = STACK[pointer];
@@ -68,7 +66,7 @@ for(let i1 = 0; i1 < instructions.length; i1++) {
 			pointer++;
 			break;
 		case OUTPUT:
-			outputString += String.fromCharCode(STACK[pointer]);
+			outputString = outputString + String.fromCharCode(STACK[pointer]);
 			break;
 		case PASTE:
 			STACK[pointer] = clipboard;
