@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include "main.h"
 
-int8_t STACK[65536];
+int8_t STACK[65536] = {0};
 
 int32_t pointer = 0;
 int32_t loopTimes = 0;
