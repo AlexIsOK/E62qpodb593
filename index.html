@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E62qpodb593</title>
+    <script>
+        async function runE26Code() {
+        	
+	        const code = JSON.stringify(document.getElementById("input").value);
+	        
+	        let STACK = [0];
+	        STACK.length = 65536;
+	
+	        const LOOP_START = 'e'; //start the loop
+	        const COPY       = 'z'; //copy current byte to clipboard
+	        const INCREMENT  = 'q'; //increment current position on stack by one
+	        const DECREMENT  = 'p'; //decrement current position on stack by one
+	        const POINTER_L  = 'b'; //move the pointer to the left
+	        const POINTER_R  = 'd'; //move the pointer to the right
+	        const OUTPUT     = 'o'; //output the current byte
+	        const PASTE      = '2'; //set the current byte to the clipboard
+	        const LOOP_END   = '3'; //end the loop
+	
+	        const CLIPBOARD_IF_LO = '9'; //decrement if lower than clipboard
+	        const CLIPBOARD_IF_UP = '6'; //increment if lower than clipboard
+	
+	        const DASH_UP = 'y'; //increase the value at pointer by 5
+	        const DASH_DOWN = 'k'; //same thing as above but minus 5
+	
+	        const GOTO_HOME = '5'; //goto the HOME address
+	
+	        const ACTION_POINTER_ZERO = '0'; //set the value of the pointer pos to 0
+	        const ACTION_POINTER_ADDR_64 = 't'; //set the stack value of pointer pos to 64 (@)
+            
+	        const LOOP_TIMES_ADDR = 4;
+	
+	        const HOME_ADDRESS = 0;
+	
+	        let pointer = 0;
+	        let loopTimes = 0;
+	        let loopTimesCurrent = 0;
+	        let gotoMark = 0;
+	
+	        let looping = false;
+	
+	        let clipboard = 0;
+	
+	        let inst = [];
+            inst.length = 65536;
+            
+            for(let i = 0; i < inst.length; i++) {
+            	inst[i] = code.charAt(i);
+	            console.log(inst[i])
+            }
+	        
+	        let outputString = "";
+                STACK = Array.apply(null, Array(65536)).map(Number.prototype.valueOf, 0);
+	        for(let i1 = 0; i1 < inst.length; i1++) {
+		        const c = inst[i1];
+		        console.log(c);
+		        loopTimes = STACK[LOOP_TIMES_ADDR];
+		        switch(c) {
+			        case COPY:
+				        clipboard = STACK[pointer];
+				        break;
+			        case INCREMENT:
+				        STACK[pointer]++;
+				        break;
+			        case DECREMENT:
+				        STACK[pointer]--;
+				        break;
+			        case POINTER_L:
+				        pointer--;
+				        break;
+			        case POINTER_R:
+				        pointer++;
+				        break;
+			        case OUTPUT:
+				        outputString += await String.fromCharCode(STACK[pointer]);
+				        break;
+			        case PASTE:
+				        STACK[pointer] = clipboard;
+				        break;
+			        case CLIPBOARD_IF_UP:
+				        if (STACK[pointer] < clipboard)
+					        STACK[pointer]++;
+				        break;
+			        case CLIPBOARD_IF_LO:
+				        if (STACK[pointer] < clipboard)
+					        STACK[pointer]--;
+				        break;
+			        case GOTO_HOME:
+				        pointer = HOME_ADDRESS;
+				        break;
+			        case ACTION_POINTER_ZERO:
+				        STACK[pointer] = 0;
+				        break;
+			        case ACTION_POINTER_ADDR_64:
+				        STACK[pointer] = 64;
+				        break;
+			        case LOOP_START:
+				        gotoMark = i1;
+				        loopTimesCurrent = loopTimes;
+				        looping = true;
+				        break;
+			        case LOOP_END:
+				        if(!looping) break;
+				        if(loopTimesCurrent > 0) {
+					        i1 = gotoMark;
+					        loopTimesCurrent--;
+				        }
+				        else looping = false;
+				        break;
+			        case DASH_DOWN:
+				        STACK[pointer] = await (STACK[pointer] - 5);
+				        break;
+			        case DASH_UP:
+				        STACK[pointer] = await (STACK[pointer] + 5);
+				        break;
+		        }
+	        }
+	        await console.log(outputString)
+	        document.getElementById('output').innerHTML = outputString;
+        }
+        
+    </script>
+    
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        p, a, h2, h1, label {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>E62qpodb593</h1>
+<br>
+<p>Yes, <a href="https://github.com/AlexIsOK/E62qpodb593">this is a real thing.</a></p><br>
+
+<label for="input">Input E62qpodb593 code</label><br>
+<input type="text" id="input"><br><br>
+<button onclick="runE26Code()">run le code</button>
+<br><br>
+<p id="output">Output will be displayed here.</p>
+<br><br>
+<p>Example: tqqqyoyyyyyypoyqqooqqqoztkkkkotkkkkkkppotyyyyyppo2oqqqokpokkqqotkkkkkkpo</p>
+<br><br>
+</body>
+<footer>
+    <p>
+        Note: All calculations are done on the client side and it <a href="https://alexisok.dev/ohnomycpu.png">will eat your CPU alive.</a>
+    </p>
+    <br>
+    <a href="https://github.com/AlexIsOK/E62qpodb593"><p>Source</p></a><br>
+    <p><a href="https://esolangs.org/wiki/E62qpodb593">View it on esolang</a></p>
+    <br>
+    <a href="/">homepage</a>
+</footer>
+</html>
